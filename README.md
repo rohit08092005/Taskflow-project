@@ -6,7 +6,7 @@ A bold, modern task management dashboard built with **Next.js 14** and **TypeScr
 
 - ✅ Add, edit, complete, and delete tasks
 - 🎯 Three priority levels — High, Medium, Low — with colour-coded indicators
-- 📅 Due dates with smart labels (Today / Tomorrow / Xd left / Xd overdue)
+- 📅 Due dates with smart labels (Today / Tomorrow / overdue)
 - 🏷️ Six task tags — Work, Personal, Health, Finance, Learning, Home
 - 🔍 Filter tasks by tag or by status (All / Active / Completed)
 - 📊 Live progress bar showing overall completion %
