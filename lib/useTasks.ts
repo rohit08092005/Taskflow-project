@@ -47,18 +47,18 @@ export function useTasks() {
   const [editId,    setEditId]    = useState<number | null>(null);
   const [form,      setForm]      = useState<FormState>(EMPTY_FORM);
 
-  // ── Hydrate from localStorage once on mount ────────────────────────
+  // Hydrate from localStorage once on mount 
   useEffect(() => {
     setTasks(loadTasks());
     setHydrated(true);
   }, []);
 
-  // ── Persist to localStorage on every tasks change ─────────────────
+  // Persist to localStorage on every tasks change
   useEffect(() => {
     if (hydrated) saveTasks(tasks);
   }, [tasks, hydrated]);
 
-  // ── Derived lists ──────────────────────────────────────────────────
+  //  Derived lists
   const filtered = useMemo(() => {
     return tasks.filter((t) => {
       if (view === "Active"    && t.completed)  return false;
@@ -78,7 +78,7 @@ export function useTasks() {
     ? Math.round((tasks.filter((t) => t.completed).length / tasks.length) * 100)
     : 0;
 
-  // ── Actions ────────────────────────────────────────────────────────
+  // Actions 
   function toggleTask(id: number) {
     setTasks((prev) =>
       prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
